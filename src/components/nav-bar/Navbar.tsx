@@ -1,11 +1,12 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem,  Button} from "@nextui-org/react";
 import ThemeSwitch from "@/components/theme/ThemeSwitch";
+import Link from "next/link";
+import {useEffect,useState} from 'react'
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   const menuItems = [
     "Profile",
     "Dashboard",
@@ -18,6 +19,24 @@ export default function App() {
     "Help & Feedback",
     "Log Out",
   ];
+  const [targetComponentId, setTargetComponentId] = useState(null);
+
+  // Function to handle link clicks and smooth scroll
+  const handleLinkClick = (id:any) => {
+    setTargetComponentId(id);
+    setIsMenuOpen(false); // Close menu after link click (optional)
+  };
+
+  // Effect to scroll to the target component when the ID changes
+  useEffect(() => {
+    if (targetComponentId) {
+      const targetElement = document.getElementById(targetComponentId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+      setTargetComponentId(null); // Reset after scrolling
+    }
+  }, [targetComponentId]);
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
@@ -33,30 +52,28 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
+        
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link href="#intro" aria-current="page">
+            Home
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+
+        <NavbarItem isActive>
+          <Link href="#about" aria-current="page">
+            About me
           </Link>
         </NavbarItem>
+
       </NavbarContent>
+
+      {/* theme switch */}
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
         <NavbarItem>
             <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -66,7 +83,7 @@ export default function App() {
               }
               className="w-full"
               href="#"
-              size="lg"
+
             >
               {item}
             </Link>

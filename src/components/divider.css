@@ -1,0 +1,21 @@
+.gemini-gradient {
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff);
+    background-size: 200% 100%;
+   }
+   
+   @keyframes gemini-animation {
+     0% {
+       background-position: 0% 50%;
+    }
+     50% {
+       background-position: 100% 50%;
+    }
+     100% {
+       background-position: 0% 50%;
+    }
+   }
+   
+   .animate-gemini-animation {
+    animation: gemini-animation 3s ease infinite;
+   }
+   
