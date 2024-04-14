@@ -7,6 +7,7 @@ import Demox from "@/components/Demox";
 import About from "@/pages/About";
 import Intro from "@/pages/Intro";
 import SectionDivider from "@/components/section-divider";
+import Skills from '../pages/skills';
 
 export default function Home() {
 
@@ -14,14 +15,11 @@ export default function Home() {
     <main className="bg-blue-200 dark:bg-gray-900 w-full h-full">
       <NextUIProvider>      
         <NavbarComponent />
-        {/* <div className="mb-32"> */}
           <Intro />
-        {/* </div> */}
           <SectionDivider />
-        <div className="mt-0">
           <About />
-        </div>
-
+          <SectionDivider />
+          <Skills />
     </NextUIProvider>
     </main>
   );

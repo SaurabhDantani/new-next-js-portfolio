@@ -3,7 +3,8 @@ import React from "react";
 
 import Image from "next/image";
 import { StickyScroll } from "./AboutComponent";
-import saurabh from '../../../public/vercel.svg'
+// import saurabh from '../../../public/vercel.svg'
+import profilePic from '../../../public/profile-pic.png'
 
 const content = [
   {
@@ -23,7 +24,7 @@ const content = [
     ),
     content: (
       <div className="h-full w-full p-20  bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image src={saurabh} 
+        <Image src={profilePic} 
         className="rounded-full overflow-hidden"
         alt="not found"
          />
@@ -37,7 +38,7 @@ const content = [
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src={saurabh}
+          src={profilePic}
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -46,26 +47,26 @@ const content = [
       </div>
     ),
   },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
+  // {
+  //   title: "Version control",
+  //   description:
+  //     "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+  //   content: (
+  //     <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+  //       Version control
+  //     </div>
+  //   ),
+  // },
+  // {
+  //   title: "Running out of content",
+  //   description:
+  //     "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+  //   content: (
+  //     <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+  //       Running out of content
+  //     </div>
+  //   ),
+  // },
 ];
 export function StickyScrollRevealDemo() {
   return (

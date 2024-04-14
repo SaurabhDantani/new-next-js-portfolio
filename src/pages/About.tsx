@@ -43,7 +43,7 @@ export default function About() {
       )}
       {isMobile && (
         <div className="md:hidden lg:hidden">
-          <Card className="p-0 m-0">
+          <Card className="dark:bg-gray-900" shadow='md'>
            <CardHeader className="flex gap-3 text-yellow-400 justify-center text-2xl">
             About Me
            </CardHeader>
