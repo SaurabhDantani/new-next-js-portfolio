@@ -4,19 +4,20 @@ import ThemeSwitch from "@/components/theme/ThemeSwitch";
 import Link from "next/link";
 
 export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuItems = [
+ const [isMenuOpen, setIsMenuOpen] = useState(false);
+ const menuItems = [
     "intro",
     "about",
     "skills"
-  ];
+ ];
 
-  const toggleMenu = () => {
+ const toggleMenu = () => {
+  debugger
     setIsMenuOpen(!isMenuOpen);
-  };
+ };
 
-  return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
+ return (
+    <Navbar shouldHideOnScroll>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -44,13 +45,15 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu onClick={()=>{toggleMenu()}}>
         {menuItems.map((item, index) => (
           <div key={index}>
-            <NavbarMenuItem onClick={toggleMenu}> {/* Toggle menu when clicking menu items */}
+            <NavbarMenuItem onClick={() => {
+              toggleMenu(); // Close the menu
+            }}>
               <Link
                 color={
-                  index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
                 }
                 className="w-full"
                 href={`#${item}`}
@@ -62,5 +65,5 @@ export default function App() {
         ))}
       </NavbarMenu>
     </Navbar>
-  );
+ );
 }
