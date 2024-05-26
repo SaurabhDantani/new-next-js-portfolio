@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
 import NavbarComponent from "@/components/nav-bar/Navbar";
-import {NextUIProvider} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { BackgroundBoxesDemo } from "@/components/header/Index.background-boxes";
 import Demox from "@/components/Demox";
 import About from "@/pages/About";
@@ -13,14 +13,15 @@ export default function Home() {
 
   return (
     <main className="bg-blue-200 dark:bg-gray-900 w-full h-full">
-      <NextUIProvider>      
+      <NextUIProvider>
         <NavbarComponent />
-          <Intro />
-          <SectionDivider />
-          <About />
-          <SectionDivider />
-          <Skills />
-    </NextUIProvider>
+        <Intro />
+        {/* <SectionDivider /> */}
+        <About />
+        {/* <SectionDivider /> */}
+        
+        <Skills />
+      </NextUIProvider>
     </main>
   );
 }

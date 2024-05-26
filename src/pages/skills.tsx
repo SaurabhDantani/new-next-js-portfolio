@@ -87,6 +87,7 @@ function Skills() {
               ))}
             </Marquee>
           </div>
+          
         </div>
       </CardBody>
     </Card>

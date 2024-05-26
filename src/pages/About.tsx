@@ -3,6 +3,7 @@ import Demox from "@/components/Demox";
 import { StickyScrollRevealDemo } from "@/components/about/AboutIndex";
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@nextui-org/react";
 import { IndexBackgroundGradient } from '@/components/mobile-about/IndexLampSection';
+import SectionDivider from '@/components/section-divider';
 
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
@@ -31,6 +32,8 @@ export default function About() {
   }, []);
 
   return (
+    <>
+ 
     <div id="about">
       {!isMobile && (
         <Card>
@@ -54,6 +57,7 @@ export default function About() {
 
         </div>
       )}
-    </div>
+    </div>    
+    </>
   );
 }
